@@ -13,12 +13,6 @@ import MyFavoritesModal from './components/MyFavoritesModal';
 import PETS_DATABASE from './data/petsData';
 import './App.css';
 
-const DEFAULT_SEED_FAVORITES = {
-  'dog-1': true,
-  'cat-2': true,
-  'dog-5': true,
-};
-
 function parseHash() {
   const hash = window.location.hash || '';
   let page = 'home';
@@ -105,22 +99,27 @@ function App() {
 
   const [favorites, setFavorites] = useState(() => {
     try {
-      const hasSeeded = localStorage.getItem('pet_heaven_favorites_seeded_v1');
-      const stored = localStorage.getItem('pet_heaven_favorites');
-      if (!hasSeeded) {
-        const merged = stored ? { ...DEFAULT_SEED_FAVORITES, ...JSON.parse(stored) } : DEFAULT_SEED_FAVORITES;
-        localStorage.setItem('pet_heaven_favorites', JSON.stringify(merged));
-        localStorage.setItem('pet_heaven_favorites_seeded_v1', 'true');
-        return merged;
+      if (localStorage.getItem('pet_heaven_favorites_seeded_v1')) {
+        localStorage.removeItem('pet_heaven_favorites_seeded_v1');
+        localStorage.removeItem('pet_heaven_favorites');
+        return {};
       }
-      return stored ? JSON.parse(stored) : DEFAULT_SEED_FAVORITES;
+      const stored = localStorage.getItem('pet_heaven_favorites');
+      return stored ? JSON.parse(stored) : {};
     } catch {
-      return DEFAULT_SEED_FAVORITES;
+      return {};
     }
   });
 
+  const activeFavorites = isLoggedIn ? favorites : {};
+
   const toggleFavorite = (e, petId) => {
     if (e && e.stopPropagation) e.stopPropagation();
+    if (!isLoggedIn) {
+      showToast('Please log in to save pets to your favorites.', 'info');
+      setShowLoginModal(true);
+      return;
+    }
     setFavorites((prev) => {
       const next = { ...prev, [petId]: !prev[petId] };
       try {
@@ -362,7 +361,7 @@ function App() {
             onOpenLoginModal={() => setShowLoginModal(true)}
             onShowToast={showToast}
             user={user}
-            favorites={favorites}
+            favorites={activeFavorites}
             toggleFavorite={toggleFavorite}
           />
         )}
@@ -436,7 +435,7 @@ function App() {
       <MyFavoritesModal
         isOpen={showMyFavoritesModal}
         onClose={() => setShowMyFavoritesModal(false)}
-        favorites={favorites}
+        favorites={activeFavorites}
         toggleFavorite={toggleFavorite}
         onViewPet={(pet) => {
           setShowMyFavoritesModal(false);
