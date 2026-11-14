@@ -531,8 +531,8 @@ input[type="checkbox"]:checked ~ .checkbox-custom-box::after {
   overflow-y: auto;
   overscroll-behavior: contain;
   overscroll-behavior-y: contain;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(142, 30, 162, 0.25) transparent;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -541,20 +541,9 @@ input[type="checkbox"]:checked ~ .checkbox-custom-box::after {
 }
 
 .filter-accordions-group::-webkit-scrollbar {
-  width: 5px;
-}
-
-.filter-accordions-group::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.filter-accordions-group::-webkit-scrollbar-thumb {
-  background-color: rgba(142, 30, 162, 0.22);
-  border-radius: 4px;
-}
-
-.filter-accordions-group::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(142, 30, 162, 0.42);
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .accordion-item {
