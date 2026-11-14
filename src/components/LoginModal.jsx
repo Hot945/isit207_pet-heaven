@@ -194,15 +194,20 @@ function LoginModalContent({
     const updatedUsers = [...users, newUser];
     saveStoredUsers(updatedUsers);
 
-    onLogin({
-      id: newUser.id,
-      firstName: newUser.firstName,
-      lastName: newUser.lastName,
-      name: newUser.name,
-      email: newUser.email,
+    setLoginEmail(email);
+    setLoginPassword('');
+    setRegFirstName('');
+    setRegLastName('');
+    setRegEmail('');
+    setRegPassword('');
+    setRegConfirmPassword('');
+    setFieldErrors({});
+    setActiveTab('login');
+    setFeedback({
+      type: 'success',
+      text: 'Account created successfully! Please log in with your email and password.',
     });
-    onShowToast(`Account created! Welcome to Pet Heaven, ${newUser.firstName}.`, 'success');
-    onClose();
+    onShowToast('Account created! Please log in to continue.', 'success');
   };
 
   return (
