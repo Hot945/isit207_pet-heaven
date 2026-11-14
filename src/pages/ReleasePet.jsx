@@ -17,7 +17,6 @@ export default function ReleasePet({
   isLoggedIn: externalIsLoggedIn,
   user: externalUser,
   onOpenLoginModal: externalOpenLoginModal,
-  onLogout: externalLogout,
   onShowToast,
 } = {}) {
 
@@ -28,7 +27,6 @@ export default function ReleasePet({
 
   const isLoggedIn = externalIsLoggedIn !== undefined ? externalIsLoggedIn : localLoggedIn;
   const openLoginModal = externalOpenLoginModal || (() => setLocalShowLoginModal(true));
-  const handleLogout = externalLogout || (() => { setLocalLoggedIn(false); setIsSubmitted(false); });
   const handleLocalLoginSubmit = (e) => {
     if (e) e.preventDefault();
     setLocalLoggedIn(true);
@@ -280,19 +278,6 @@ export default function ReleasePet({
               Please provide comprehensive information about your pet so our adoption coordinators and shelter partners can assess their placement.
             </p>
           </div>
-
-          {/* 登录状态条（已登录时显示身份并提供退出测试选项） */}
-          {isLoggedIn && (
-            <div className="logged-in-status-bar">
-              <div className="user-info-pill">
-                <span className="user-status-dot"></span>
-                <span>Signed in as <strong>{accountName}</strong> ({accountEmail})</span>
-              </div>
-              <button type="button" className="demo-signout-btn" onClick={handleLogout}>
-                Sign Out (Test Blur View)
-              </button>
-            </div>
-          )}
 
           {/* 表单包裹区：未登录时整体应用高斯模糊，提交后统一呈现与领养申请一致的成功回执卡片 */}
           <div className={`form-blur-wrapper ${isLoggedIn && isSubmitted ? 'is-submitted' : ''}`}>

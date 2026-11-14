@@ -370,7 +370,6 @@ function App() {
             isLoggedIn={isLoggedIn}
             user={user}
             onOpenLoginModal={() => setShowLoginModal(true)}
-            onLogout={handleLogout}
             onShowToast={showToast}
           />
         )}

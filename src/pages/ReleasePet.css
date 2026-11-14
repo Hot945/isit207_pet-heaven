@@ -307,48 +307,6 @@
   line-height: 1.5;
 }
 
-.logged-in-status-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  background: rgba(142, 30, 162, 0.08);
-  border: 1px solid rgba(142, 30, 162, 0.2);
-  border-radius: 12px;
-}
-
-.user-info-pill {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--color-text-main, #241935);
-}
-
-.user-status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #10b981;
-}
-
-.demo-signout-btn {
-  background: transparent;
-  border: 1px solid #8E1EA2;
-  color: #8E1EA2;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.demo-signout-btn:hover {
-  background: #8E1EA2;
-  color: #ffffff;
-}
-
 .form-blur-wrapper {
   position: relative;
   border-radius: 20px;
@@ -1310,13 +1268,4 @@
 
 [data-theme="dark"] .login-required-gate-backdrop {
   background: rgba(24, 17, 36, 0.35);
-}
-
-[data-theme="dark"] .logged-in-status-bar {
-  background: rgba(142, 30, 162, 0.18);
-  border-color: rgba(192, 98, 223, 0.25);
-}
-
-[data-theme="dark"] .user-info-pill {
-  color: #f1ecf7;
 }
