@@ -34,7 +34,7 @@
 .footer-brand-logo {
   flex-shrink: 0;
   margin-right: -3px;
-  transform: translateY(3px);
+  transform: translateY(3.5px);
   transition: opacity 0.2s ease;
 }
 
@@ -43,10 +43,11 @@
 }
 
 .footer-logo-text {
-  font-size: 26px;
-  font-weight: 800;
+  font-size: 29px;
+  font-weight: 700;
+  font-family: 'Fredoka', var(--font-family-base);
   color: #FFFFFF;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
   transition: opacity 0.2s ease;
 }
 
