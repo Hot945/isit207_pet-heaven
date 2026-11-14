@@ -202,11 +202,8 @@ function LoginModalContent({
     setRegPassword('');
     setRegConfirmPassword('');
     setFieldErrors({});
+    setFeedback(null);
     setActiveTab('login');
-    setFeedback({
-      type: 'success',
-      text: 'Account created successfully! Please log in with your email and password.',
-    });
     onShowToast('Account created! Please log in to continue.', 'success');
   };
 
