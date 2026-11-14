@@ -65,9 +65,9 @@ function Footer() {
             © {new Date().getFullYear()} Pet Heaven. All rights reserved.
           </p>
           <div className="footer-legal-links">
-            <a href="#privacy">Privacy Policy</a>
+            <span className="footer-legal-item">Privacy Policy</span>
             <span className="footer-divider">•</span>
-            <a href="#terms">Terms of Service</a>
+            <span className="footer-legal-item">Terms of Service</span>
           </div>
         </div>
       </div>

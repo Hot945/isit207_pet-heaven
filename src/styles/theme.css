@@ -945,7 +945,7 @@
 }
 
 [data-theme="dark"] .footer-copyright,
-[data-theme="dark"] .footer-legal-links a {
+[data-theme="dark"] .footer-legal-item {
   color: #8C7F9D !important;
 }
 

@@ -115,15 +115,10 @@
   gap: 10px;
 }
 
-.footer-legal-links a {
+.footer-legal-item {
   color: #B5AFA9;
   font-size: 13px;
-  text-decoration: none;
-  transition: color 0.18s ease;
-}
-
-.footer-legal-links a:hover {
-  color: #FFFFFF;
+  cursor: default;
 }
 
 .footer-divider {
