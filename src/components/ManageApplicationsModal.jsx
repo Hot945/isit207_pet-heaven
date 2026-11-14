@@ -26,229 +26,48 @@ const getPetPlaceholder = (petType = '') => {
   return PET_PLACEHOLDERS.other;
 };
 
-const SEED_ADOPT_APPLICATIONS = [
-  {
-    referenceCode: 'APP-2026-7142',
-    petId: 'dog-1',
-    petName: 'Joey 7142',
-    petBreed: 'Brittany Spaniel & Labrador Retriever Mix',
-    petImage: '/src/assets/pets/dogs/Brittany Spaniel/Joey 7142.jpg',
-    petShelter: 'SPCA Singapore',
-    petLocation: 'Sungei Tengah, Singapore',
-    applicantName: 'Alex Tan',
-    applicantEmail: 'alex.tan@example.sg',
-    applicantPhone: '+65 9123 4567',
-    housingType: 'HDB 4-Room (Approved Dog Breed)',
-    submissionDate: '10 Nov 2026, 14:32',
-    type: 'Adoption Application',
-    shelterContact: 'adoptions@spca.org.sg',
-    notes: 'Prior dog ownership experience of 8 years. Family members fully supportive of adoption.',
-  },
-  {
-    referenceCode: 'APP-2026-3829',
-    petId: 'dog-3',
-    petName: 'Flame',
-    petBreed: 'Boxer',
-    petImage: '/src/assets/pets/dogs/Boxer/Flame.jpg',
-    petShelter: 'Causes for Animals Singapore (CAS)',
-    petLocation: 'Pasir Ris, Singapore',
-    applicantName: 'Alex Tan',
-    applicantEmail: 'alex.tan@example.sg',
-    applicantPhone: '+65 9123 4567',
-    housingType: 'Condominium (Ground Floor with Yard)',
-    submissionDate: '02 Nov 2026, 10:15',
-    type: 'Adoption Application',
-    shelterContact: 'info@causesforanimals.com',
-    notes: 'Looking for an energetic companion. Large fenced patio available.',
-  },
-  {
-    referenceCode: 'APP-2026-4912',
-    petId: 'cat-1',
-    petName: 'Milo',
-    petBreed: 'British Shorthair',
-    petImage: '/src/assets/pets/cats/British Shorthair/Milo.jpg',
-    petShelter: 'Cat Welfare Society (CWS)',
-    petLocation: 'Bishan, Singapore',
-    applicantName: 'Alex Tan',
-    applicantEmail: 'alex.tan@example.sg',
-    applicantPhone: '+65 9123 4567',
-    housingType: 'HDB 5-Room (Fully Meshed Windows & Gate)',
-    submissionDate: '28 Oct 2026, 09:40',
-    type: 'Adoption Application',
-    shelterContact: 'adoptions@catwelfare.org',
-    notes: 'Calm indoor environment with dedicated cat scratching posts and cat trees.',
-  },
-  {
-    referenceCode: 'APP-2026-1508',
-    petId: 'dog-2',
-    petName: 'Zues',
-    petBreed: 'German Shepherd Dog',
-    petImage: '/src/assets/pets/dogs/German Shepherd Dog/Zues.jpg',
-    petShelter: 'Action for Singapore Dogs (ASD)',
-    petLocation: 'Lim Chu Kang, Singapore',
-    applicantName: 'Alex Tan',
-    applicantEmail: 'alex.tan@example.sg',
-    applicantPhone: '+65 9123 4567',
-    housingType: 'Landed Property with Fenced Garden',
-    submissionDate: '21 Oct 2026, 16:05',
-    type: 'Adoption Application',
-    shelterContact: 'info@asdsingapore.com',
-    notes: 'Experienced large breed handler. Daily evening agility walks planned.',
-  },
-  {
-    referenceCode: 'APP-2026-6271',
-    petId: 'cat-2',
-    petName: 'Luna',
-    petBreed: 'British Shorthair',
-    petImage: '/src/assets/pets/cats/British Shorthair/Luna.jpg',
-    petShelter: 'Kitten Sanctuary Singapore (KiSS)',
-    petLocation: 'Mountbatten, Singapore',
-    applicantName: 'Alex Tan',
-    applicantEmail: 'alex.tan@example.sg',
-    applicantPhone: '+65 9123 4567',
-    housingType: 'Condominium (Meshed Balcony)',
-    submissionDate: '15 Oct 2026, 11:22',
-    type: 'Adoption Application',
-    shelterContact: 'contact@kittensanctuarysg.org',
-    notes: 'Quiet work-from-home setting with plenty of time for companionship and care.',
-  },
-];
-
-const SEED_RELEASE_APPLICATIONS = [
-  {
-    referenceCode: 'REL-2026-8842',
-    petName: 'Barney',
-    petType: 'Dog',
-    petBreed: 'Beagle',
-    petAge: '2 yrs 4 mos',
-    petGender: 'Male',
-    petImage: '/src/assets/pets/dogs/Beagle/Barney.jpg',
-    petShelter: 'SPCA Singapore Rehoming Intake',
-    petLocation: 'Sungei Tengah, Singapore',
-    vaccinationStatus: 'Fully Vaccinated & Microchipped',
-    medicalNotes: 'Healthy, slight skin sensitivity to chicken. On salmon & sweet potato diet.',
-    rehomeReason: 'Caregiver relocation overseas due to emergency family commitments.',
-    petStory: 'Barney is gentle, quiet, house-trained, and gets along wonderfully with young children.',
-    ownerName: 'Alex Tan',
-    ownerPhone: '+65 9123 4567',
-    ownerEmail: 'alex.tan@example.sg',
-    ownerPostal: '520123',
-    submissionDate: '08 Nov 2026, 16:20',
-    type: 'Release Application',
-  },
-  {
-    referenceCode: 'REL-2026-6194',
-    petName: 'Felix',
-    petType: 'Cat',
-    petBreed: 'American Shorthair',
-    petAge: '1 yr 8 mos',
-    petGender: 'Male',
-    petImage: '/src/assets/pets/cats/American Shorthair/Felix.jpg',
-    petShelter: 'Cat Welfare Society (CWS) Intake',
-    petLocation: 'Bishan, Singapore',
-    vaccinationStatus: 'Sterilized, Vaccinated & Microchipped',
-    medicalNotes: 'Up to date on vaccinations, clear dental check, indoor-only cat.',
-    rehomeReason: 'Severe pet dander allergy developed by newborn infant.',
-    petStory: 'Felix is affectionate, calm, enjoys sunny spots, and loves purring on laps during evenings.',
-    ownerName: 'Alex Tan',
-    ownerPhone: '+65 9123 4567',
-    ownerEmail: 'alex.tan@example.sg',
-    ownerPostal: '560234',
-    submissionDate: '05 Nov 2026, 14:15',
-    type: 'Release Application',
-  },
-  {
-    referenceCode: 'REL-2026-4277',
-    petName: 'Charlie',
-    petType: 'Dog',
-    petBreed: 'Cavalier King Charles Spaniel',
-    petAge: '3 yrs 2 mos',
-    petGender: 'Male',
-    petImage: '/src/assets/pets/dogs/Cavalier King Charles Spaniel/Charlie.jpg',
-    petShelter: 'Action for Singapore Dogs (ASD) Rehoming',
-    petLocation: 'Lim Chu Kang, Singapore',
-    vaccinationStatus: 'Up-to-Date Annual Vaccinations',
-    medicalNotes: 'Regular vet checks, gentle heart murmurs monitored annually with no medication needed.',
-    rehomeReason: 'Elderly owner entering assisted living facility that cannot accommodate pets.',
-    petStory: 'Charlie is a soulful companion dog who walks politely on leash and loves gentle cuddles.',
-    ownerName: 'Alex Tan',
-    ownerPhone: '+65 9123 4567',
-    ownerEmail: 'alex.tan@example.sg',
-    ownerPostal: '210567',
-    submissionDate: '31 Oct 2026, 11:30',
-    type: 'Release Application',
-  },
-  {
-    referenceCode: 'REL-2026-2915',
-    petName: 'Amber',
-    petType: 'Cat',
-    petBreed: 'Abyssinian',
-    petAge: '1 yr 2 mos',
-    petGender: 'Female',
-    petImage: '/src/assets/pets/cats/Abyssinian/Amber.jpg',
-    petShelter: 'Kitten Sanctuary Singapore (KiSS)',
-    petLocation: 'Mountbatten, Singapore',
-    vaccinationStatus: 'Fully Vaccinated & Health Checked',
-    medicalNotes: 'Very active, microchipped, litter-trained, no chronic medical issues.',
-    rehomeReason: 'Job loss and sudden downsizing to dormitory housing.',
-    petStory: 'Amber is playful, agile, very observant, and fascinated by feather wands and high vantage points.',
-    ownerName: 'Alex Tan',
-    ownerPhone: '+65 9123 4567',
-    ownerEmail: 'alex.tan@example.sg',
-    ownerPostal: '430112',
-    submissionDate: '25 Oct 2026, 17:45',
-    type: 'Release Application',
-  },
-  {
-    referenceCode: 'REL-2026-1403',
-    petName: 'Moose',
-    petType: 'Dog',
-    petBreed: 'Bernese Mountain Dog',
-    petAge: '4 yrs 1 mo',
-    petGender: 'Male',
-    petImage: '/src/assets/pets/dogs/Bernese Mountain Dog/Moose.jpg',
-    petShelter: 'Save Our Street Dogs (SOSD) Intake',
-    petLocation: 'Jurong Island, Singapore',
-    vaccinationStatus: 'Complete Core Vaccinations & Heartworm Prevention',
-    medicalNotes: 'Excellent health condition, well-managed joint supplement regimen.',
-    rehomeReason: 'Family sudden medical emergencies and inability to provide adequate physical exercise.',
-    petStory: 'Moose is a gentle giant with a golden heart. Friendly with other calm dogs and loves cool tiled floors.',
-    ownerName: 'Alex Tan',
-    ownerPhone: '+65 9123 4567',
-    ownerEmail: 'alex.tan@example.sg',
-    ownerPostal: '610789',
-    submissionDate: '18 Oct 2026, 09:10',
-    type: 'Release Application',
-  },
-];
-
 const ADOPT_STORAGE_KEY = 'pet_heaven_user_applications';
 const RELEASE_STORAGE_KEY = 'pet_heaven_user_release_applications';
-const ADOPT_SEEDED_KEY = 'pet_heaven_adopt_apps_seeded';
-const RELEASE_SEEDED_KEY = 'pet_heaven_release_apps_seeded';
+const LEGACY_ADOPT_SEEDED_KEY = 'pet_heaven_adopt_apps_seeded';
+const LEGACY_RELEASE_SEEDED_KEY = 'pet_heaven_release_apps_seeded';
 
-const syncStoredApplications = (storageKey, seedKey, seedList) => {
-  const raw = localStorage.getItem(storageKey);
-  const parsed = raw ? JSON.parse(raw) : [];
-  const list = Array.isArray(parsed) ? parsed : [];
+const LEGACY_ADOPT_SEED_CODES = new Set([
+  'APP-2026-7142',
+  'APP-2026-3829',
+  'APP-2026-4912',
+  'APP-2026-1508',
+  'APP-2026-6271',
+]);
 
-  if (!localStorage.getItem(seedKey)) {
-    const existingCodes = new Set(list.map((p) => p.referenceCode));
-    const seeded = [...list, ...seedList.filter((s) => !existingCodes.has(s.referenceCode))];
-    localStorage.setItem(storageKey, JSON.stringify(seeded));
-    localStorage.setItem(seedKey, 'true');
-    return seeded;
-  }
+const LEGACY_RELEASE_SEED_CODES = new Set([
+  'REL-2026-8842',
+  'REL-2026-6194',
+  'REL-2026-4277',
+  'REL-2026-2915',
+  'REL-2026-1403',
+]);
 
-  return list;
-};
-
-const loadStoredList = (storageKey, seedKey, seedList) => {
+const loadStoredList = (storageKey, legacySeedKey, legacySeedCodes, userEmail, emailField) => {
   try {
-    return syncStoredApplications(storageKey, seedKey, seedList);
+    const raw = localStorage.getItem(storageKey);
+    const parsed = raw ? JSON.parse(raw) : [];
+    let list = Array.isArray(parsed) ? parsed : [];
+
+    if (localStorage.getItem(legacySeedKey)) {
+      list = list.filter((item) => !legacySeedCodes.has(item?.referenceCode));
+      localStorage.setItem(storageKey, JSON.stringify(list));
+      localStorage.removeItem(legacySeedKey);
+    }
+
+    if (userEmail) {
+      return list.filter(
+        (item) => (item?.[emailField] || '').trim().toLowerCase() === userEmail
+      );
+    }
+    return list;
   } catch (e) {
     console.warn('Failed to parse applications from storage', e);
-    return seedList;
+    return [];
   }
 };
 
@@ -263,12 +82,25 @@ function ManageApplicationsModalContent({
   onNavigate,
   onShowToast = () => {},
 }) {
+  const userEmail = (user?.email || '').trim().toLowerCase();
   const [activeTab, setActiveTab] = useState('adopt');
   const [adoptApps, setAdoptApps] = useState(() =>
-    loadStoredList(ADOPT_STORAGE_KEY, ADOPT_SEEDED_KEY, SEED_ADOPT_APPLICATIONS)
+    loadStoredList(
+      ADOPT_STORAGE_KEY,
+      LEGACY_ADOPT_SEEDED_KEY,
+      LEGACY_ADOPT_SEED_CODES,
+      userEmail,
+      'applicantEmail'
+    )
   );
   const [releaseApps, setReleaseApps] = useState(() =>
-    loadStoredList(RELEASE_STORAGE_KEY, RELEASE_SEEDED_KEY, SEED_RELEASE_APPLICATIONS)
+    loadStoredList(
+      RELEASE_STORAGE_KEY,
+      LEGACY_RELEASE_SEEDED_KEY,
+      LEGACY_RELEASE_SEED_CODES,
+      userEmail,
+      'ownerEmail'
+    )
   );
   const [selectedApp, setSelectedApp] = useState(null);
   const [confirmDeleteTarget, setConfirmDeleteTarget] = useState(null);
@@ -297,16 +129,27 @@ function ManageApplicationsModalContent({
   };
 
   const handleDeleteRecord = (refCode) => {
+    const removeFromStorage = (storageKey) => {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        const list = raw ? JSON.parse(raw) : [];
+        if (Array.isArray(list)) {
+          localStorage.setItem(
+            storageKey,
+            JSON.stringify(list.filter((a) => a.referenceCode !== refCode))
+          );
+        }
+      } catch (err) {
+        console.warn('Failed to update applications storage', err);
+      }
+    };
+
     if (activeTab === 'adopt') {
-      const updated = adoptApps.filter((a) => a.referenceCode !== refCode);
-      setAdoptApps(updated);
-      localStorage.setItem(ADOPT_STORAGE_KEY, JSON.stringify(updated));
-      localStorage.setItem(ADOPT_SEEDED_KEY, 'true');
+      setAdoptApps((prev) => prev.filter((a) => a.referenceCode !== refCode));
+      removeFromStorage(ADOPT_STORAGE_KEY);
     } else {
-      const updated = releaseApps.filter((a) => a.referenceCode !== refCode);
-      setReleaseApps(updated);
-      localStorage.setItem(RELEASE_STORAGE_KEY, JSON.stringify(updated));
-      localStorage.setItem(RELEASE_SEEDED_KEY, 'true');
+      setReleaseApps((prev) => prev.filter((a) => a.referenceCode !== refCode));
+      removeFromStorage(RELEASE_STORAGE_KEY);
     }
     if (selectedApp && selectedApp.referenceCode === refCode) {
       setSelectedApp(null);
