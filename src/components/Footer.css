@@ -7,8 +7,8 @@
   padding: 38px 24px 28px;
   box-sizing: border-box;
   font-family: var(--font-family-base);
-
-  box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.28), 0 -2px 8px rgba(0, 0, 0, 0.16);
+  border-top: 2px solid rgba(255, 255, 255, 0.16);
+  box-shadow: none;
 }
 
 .footer-container {
