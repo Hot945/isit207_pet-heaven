@@ -211,6 +211,23 @@
   box-sizing: border-box;
 }
 
+.logo-lockup {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+.navbar-brand-logo {
+  flex-shrink: 0;
+  margin-right: -3px;
+  transform: translateY(3px);
+  transition: transform 0.25s ease;
+}
+
+.logo-center-link:hover .navbar-brand-logo {
+  transform: translateY(3px) scale(1.04);
+}
+
 .logo-text {
   font-size: 29px;
   font-weight: 800;
@@ -223,7 +240,24 @@
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.logo-center-link:hover .logo-text {
+.logo-center-link:hover .logo-lockup {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+.navbar-brand-logo {
+  flex-shrink: 0;
+  margin-right: -3px;
+  transform: translateY(3px);
+  transition: transform 0.25s ease;
+}
+
+.logo-center-link:hover .navbar-brand-logo {
+  transform: translateY(3px) scale(1.04);
+}
+
+.logo-text {
   transform: scale(1.02);
 }
 
@@ -643,7 +677,24 @@
     padding-top: 18px;
   }
 
-  .logo-text {
+  .logo-lockup {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+.navbar-brand-logo {
+  flex-shrink: 0;
+  margin-right: -3px;
+  transform: translateY(3px);
+  transition: transform 0.25s ease;
+}
+
+.logo-center-link:hover .navbar-brand-logo {
+  transform: translateY(3px) scale(1.04);
+}
+
+.logo-text {
     font-size: 24px;
   }
 

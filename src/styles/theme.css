@@ -33,6 +33,12 @@
   -webkit-background-clip: text !important;
 }
 
+[data-theme="dark"] .navbar-brand-logo {
+  --brand-logo-start: #FFFFFF;
+  --brand-logo-mid: #ECCDFF;
+  --brand-logo-end: #E0B4F5;
+}
+
 [data-theme="dark"] .nav-link,
 [data-theme="dark"] .nav-button {
   color: #D6CCDF !important;

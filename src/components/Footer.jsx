@@ -2,6 +2,7 @@ import fbIcon from '../assets/logos/facebook-svgrepo-com.svg';
 import instaIcon from '../assets/logos/instagram-svgrepo-com.svg';
 import ytbIcon from '../assets/logos/youtube-svgrepo-com.svg';
 import pinterestIcon from '../assets/logos/pinterest-svgrepo-com.svg';
+import BrandLogo from './BrandLogo';
 import './Footer.css';
 
 function Footer() {
@@ -11,7 +12,8 @@ function Footer() {
 
         <div className="footer-main-row">
           <a href="#" className="footer-logo">
-            <span className="footer-logo-text">Pet Heaven</span>
+            <BrandLogo size={27} variant="white" className="footer-brand-logo" />
+            <span className="footer-logo-text">et Heaven</span>
           </a>
 
           <div className="footer-social-links">

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import dogIcon from '../assets/dog.svg';
 import catIcon from '../assets/cat.svg';
+import BrandLogo from './BrandLogo';
 import './Navbar.css';
 
 function EclipseIcon({ className = '' }) {
@@ -222,7 +223,10 @@ function Navbar({
 
         <div className={`navbar-logo-center ${currentPage === 'home' ? 'is-home' : ''}`}>
           <a href="#" className="logo-center-link" onClick={() => setIsMobileMenuOpen(false)}>
-            <span className="logo-text">Pet Heaven</span>
+            <span className="logo-lockup">
+              <BrandLogo size={30} className="navbar-brand-logo" />
+              <span className="logo-text">et Heaven</span>
+            </span>
 
             <div className="logo-protrusion-tab" aria-hidden="true">
 

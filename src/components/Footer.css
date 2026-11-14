@@ -27,7 +27,19 @@
 .footer-logo {
   text-decoration: none;
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
+  gap: 0;
+}
+
+.footer-brand-logo {
+  flex-shrink: 0;
+  margin-right: -3px;
+  transform: translateY(3px);
+  transition: opacity 0.2s ease;
+}
+
+.footer-logo:hover .footer-brand-logo {
+  opacity: 0.9;
 }
 
 .footer-logo-text {
