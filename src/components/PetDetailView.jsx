@@ -621,25 +621,25 @@ export default function PetDetailView({
           aria-label={`${pet.name} photo fullscreen view`}
         >
 
-          <div className="fullscreen-top-left-title" onClick={(e) => e.stopPropagation()}>
+          <header className="fullscreen-top-bar" onClick={(e) => e.stopPropagation()}>
             <span className="fullscreen-pet-name">{pet.name}</span>
-          </div>
 
-          <button
-            type="button"
-            className="fullscreen-top-right-close"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsPhotoFullscreen(false);
-            }}
-            aria-label="Close fullscreen"
-            title="Close (Esc)"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
+            <button
+              type="button"
+              className="fullscreen-top-right-close"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsPhotoFullscreen(false);
+              }}
+              aria-label="Close fullscreen"
+              title="Close (Esc)"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </header>
 
           <div className="fullscreen-image-wrapper">
             <img
