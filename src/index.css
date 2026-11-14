@@ -24,10 +24,15 @@ body, button, input, select, textarea {
   font-family: var(--font-family-base);
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  overflow-x: clip;
   display: flex;
   flex-direction: column;
 }
