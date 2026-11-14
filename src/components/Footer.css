@@ -118,7 +118,12 @@
 .footer-legal-item {
   color: #B5AFA9;
   font-size: 13px;
-  cursor: default;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+
+.footer-legal-item:hover {
+  color: #FFFFFF;
 }
 
 .footer-divider {
